@@ -8,23 +8,22 @@ util misc for browser.js.
 
 ## Usage
 
-### browser
 ```
+// browser
 var currentLanguage = utilMisc.browser.getLanguage();
 console.log(currentLanguage);
 
 ```
-### cookie
 
 ```
+// cookie
 utilMisc.cookie('sid'); // get cookie 'sid'
 utilMisc.cookie('sid', 'xxxxxxx'); // set cookie 'sid=xxxxxxx'
 
 ```
 
-### uri
-
 ```
+// URI
 // get current url query param 
 // http://127.0.0.1:8080?name=hello => 'hello'
 utilMisc.URI.query('name'); 
