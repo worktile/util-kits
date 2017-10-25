@@ -1,9 +1,10 @@
 {
-    "name": "@wt/util-misc",
+    "name": "@worktile/util-misc",
     "version": "0.0.1",
     "description": "util for browser.",
     "main": "./src/index.js",
     "directories": {
+        "example": "example",
         "test": "test"
     },
     "scripts": {
@@ -25,5 +26,6 @@
     "devDependencies": {
         "http-server": "^0.10.0",
         "webpack": "^3.8.1"
-    }
+    },
+    "dependencies": {}
 }
