@@ -1,0 +1,29 @@
+{
+    "name": "@wt/util-misc",
+    "version": "0.0.1",
+    "description": "util for browser.",
+    "main": "./src/index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "build": "npm run build-bundle & npm run build-min",
+        "build-bundle": "webpack",
+        "build-min": "webpack --env.min true",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/worktile/util-misc.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/worktile/util-misc/issues"
+    },
+    "homepage": "https://github.com/worktile/util-misc#readme",
+    "devDependencies": {
+        "http-server": "^0.10.0",
+        "webpack": "^3.8.1"
+    }
+}

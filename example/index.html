@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+
+<body>
+    <script src="../dist/util.bundle.js"></script>
+    <script>
+        var currentLanguage = utilMisc.browser.getLanguage();
+        console.log('current language:' + currentLanguage);
+        document.write('current language:' + currentLanguage + '<br />');
+
+        var sid = utilMisc.cookie('sid');
+        console.log('orignal cookie sid: ' + sid);
+        document.write('orignal cookie sid: ' + sid + '<br />');
+
+        wtUtilMisc.cookie('sid', new Date());
+        setTimeout(function() {
+            var newSid = utilMisc.cookie('sid');
+            console.log('new cookie sid: ' + sid);
+            document.write('new cookie sid: ' + sid + '<br/>');
+        });
+
+        var name = utilMisc.URI.query('name');
+        console.log('query name: ' + name);
+        document.write('query name: ' + name);
+    </script>
+</body>
+
+</html>
