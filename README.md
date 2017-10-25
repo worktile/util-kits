@@ -4,6 +4,8 @@ util misc for browser.js.
 
 ## Installation
 
+`npm install @worktile/util-misc --save`
+
 ## Usage
 
 ### browser
