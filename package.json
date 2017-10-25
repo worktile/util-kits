@@ -1,6 +1,6 @@
 {
     "name": "@worktile/util-misc",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "util for browser.",
     "main": "./src/index.js",
     "directories": {

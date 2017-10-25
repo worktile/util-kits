@@ -17,11 +17,14 @@
         console.log('orignal cookie sid: ' + sid);
         document.write('orignal cookie sid: ' + sid + '<br />');
 
-        wtUtilMisc.cookie('sid', new Date());
+        utilMisc.cookie('sid', new Date());
         setTimeout(function() {
             var newSid = utilMisc.cookie('sid');
             console.log('new cookie sid: ' + sid);
-            document.write('new cookie sid: ' + sid + '<br/>');
+            var dom = document.createElement('div');
+            document.body.appendChild(dom);
+            dom.innerHTML = 'new cookie sid: ' + sid + '<br/>';
+            //document.write('new cookie sid: ' + sid + '<br/>');
         });
 
         var name = utilMisc.URI.query('name');
