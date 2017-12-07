@@ -3,12 +3,12 @@ function URI(uri) {
 }
 
 URI.prototype.parseSearch = function(search) {
-    const query = {}
+    var query = {};
     if (search.length > 1) {
         search.slice(1).split('&').forEach(function(s) {
-            const pair = s.split('=');
-            const key = decodeURIComponent(pair[0].replace(/\+/g, ' '));
-            const value = pair.length === 1 ? '' : decodeURIComponent(pair[1].replace(/\+/g, ' '));
+            var pair = s.split('=');
+            var key = decodeURIComponent(pair[0].replace(/\+/g, ' '));
+            var value = pair.length === 1 ? '' : decodeURIComponent(pair[1].replace(/\+/g, ' '));
             if (query[key] == null) {
                 query[key] = value;
             } else {
@@ -19,8 +19,8 @@ URI.prototype.parseSearch = function(search) {
             }
         });
     }
-    return query
-}
+    return query;
+};
 
 URI.prototype.parse = function(uri) {
     var uriObject = null;
@@ -46,7 +46,7 @@ URI.prototype.parse = function(uri) {
     if (this.pathname.charAt(0) !== '/') {
         this.pathname = '/' + this.pathname;
     }
-}
+};
 
 URI.query = function(name) {
     var search = window.document.location.search;
@@ -59,6 +59,6 @@ URI.query = function(name) {
     } else {
         return '';
     }
-}
+};
 
 export default URI;

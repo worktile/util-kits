@@ -19,4 +19,4 @@ module.exports = function(env) {
         config.devtool = 'source-map';
     }
     return config;
-}
+};

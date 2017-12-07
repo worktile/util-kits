@@ -98,18 +98,28 @@ var version = '0.0.1';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var defaultLanguage = 'en-us';
+var defaultLanguage = 'zh-cn';
 var supportLanguages = [
     'zh-cn',
     'zh-tw',
     'en-us'
 ];
+var EN_REGEX = /^en/g;
 
 /* harmony default export */ __webpack_exports__["a"] = ({
+    setDefaultLanguage: function(language) {
+        defaultLanguage = language;
+    },
+    setSupportLanguages: function(languages) {
+        supportLanguages = languages
+    },
     getLanguage: function() {
-        var language = (navigator.language || navigator.userLanguage).toLowerCase();
+        var language = (navigator.language || navigator.userLanguage);
+        language = language ? language.toLowerCase() : '';
         if (supportLanguages.indexOf(language) >= 0) {
             return language;
+        } else if (EN_REGEX.test(language)) {
+            return 'en-us';
         } else {
             return defaultLanguage;
         }
@@ -183,12 +193,12 @@ function URI(uri) {
 }
 
 URI.prototype.parseSearch = function(search) {
-    const query = {}
+    var query = {};
     if (search.length > 1) {
         search.slice(1).split('&').forEach(function(s) {
-            const pair = s.split('=');
-            const key = decodeURIComponent(pair[0].replace(/\+/g, ' '));
-            const value = pair.length === 1 ? '' : decodeURIComponent(pair[1].replace(/\+/g, ' '));
+            var pair = s.split('=');
+            var key = decodeURIComponent(pair[0].replace(/\+/g, ' '));
+            var value = pair.length === 1 ? '' : decodeURIComponent(pair[1].replace(/\+/g, ' '));
             if (query[key] == null) {
                 query[key] = value;
             } else {
@@ -199,8 +209,8 @@ URI.prototype.parseSearch = function(search) {
             }
         });
     }
-    return query
-}
+    return query;
+};
 
 URI.prototype.parse = function(uri) {
     var uriObject = null;
@@ -226,7 +236,7 @@ URI.prototype.parse = function(uri) {
     if (this.pathname.charAt(0) !== '/') {
         this.pathname = '/' + this.pathname;
     }
-}
+};
 
 URI.query = function(name) {
     var search = window.document.location.search;
@@ -239,7 +249,7 @@ URI.query = function(name) {
     } else {
         return '';
     }
-}
+};
 
 /* harmony default export */ __webpack_exports__["a"] = (URI);
 
