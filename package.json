@@ -1,6 +1,6 @@
 {
     "name": "@worktile/util-misc",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "util for browser.",
     "main": "./src/index.js",
     "directories": {
@@ -11,7 +11,7 @@
         "build": "npm run build-bundle & npm run build-min",
         "build-bundle": "webpack",
         "build-min": "webpack --env.min true",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "mocha --require babel-register"
     },
     "repository": {
         "type": "git",
@@ -24,7 +24,12 @@
     },
     "homepage": "https://github.com/worktile/util-misc#readme",
     "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-register": "^6.26.0",
         "http-server": "^0.10.0",
+        "mocha": "^4.0.1",
         "webpack": "^3.8.1"
     },
     "dependencies": {}

@@ -192,10 +192,10 @@ function URI(uri) {
     this.parse(uri);
 }
 
-URI.prototype.parseSearch = function(search) {
+URI.prototype.parseSearch = function (search) {
     var query = {};
     if (search.length > 1) {
-        search.slice(1).split('&').forEach(function(s) {
+        search.slice(1).split('&').forEach(function (s) {
             var pair = s.split('=');
             var key = decodeURIComponent(pair[0].replace(/\+/g, ' '));
             var value = pair.length === 1 ? '' : decodeURIComponent(pair[1].replace(/\+/g, ' '));
@@ -212,7 +212,7 @@ URI.prototype.parseSearch = function(search) {
     return query;
 };
 
-URI.prototype.parse = function(uri) {
+URI.prototype.parse = function (uri) {
     var uriObject = null;
     if (uri) {
         uriObject = document.createElement('a');
@@ -238,7 +238,7 @@ URI.prototype.parse = function(uri) {
     }
 };
 
-URI.query = function(name) {
+URI.query = function (name) {
     var search = window.document.location.search;
     if (search) {
         var rs = new RegExp("(^|)" + name + "=([^\&]*)(\&|$)", "gi").exec(search);
@@ -249,6 +249,22 @@ URI.query = function(name) {
     } else {
         return '';
     }
+};
+
+URI.getSecondaryDomain = function (host, primaryDomains) {
+    if (!primaryDomains) {
+        primaryDomains = ['worktile'];
+    }
+    var secondaryDomain = "";
+    var arrs = host.split(".");
+
+    if (arrs && arrs.length > 2 && arrs[2] !== "") {
+        var primaryDomain = arrs[1];
+        if (primaryDomains.includes(primaryDomain) && ['www', 'api'].indexOf(arrs[0]) < 0) {
+            secondaryDomain = arrs[0];
+        }
+    }
+    return secondaryDomain;
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (URI);
