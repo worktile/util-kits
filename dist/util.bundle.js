@@ -267,6 +267,15 @@ URI.getSecondaryDomain = function (host, primaryDomains) {
     return secondaryDomain;
 };
 
+URI.getOriginReplaceMainHost = function (host, mainHost, primaryDomains) {
+    const secondaryDomain = URI.getSecondaryDomain(host, primaryDomains);
+    if (secondaryDomain) {
+        return location.protocol + '//' + secondaryDomain + '.' + mainHost;
+    } else {
+        return location.protocol + '//' + mainHost;
+    }
+};
+
 /* harmony default export */ __webpack_exports__["a"] = (URI);
 
 /***/ })
