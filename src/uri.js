@@ -78,8 +78,8 @@ URI.getSecondaryDomain = function (host, primaryDomains) {
 };
 
 URI.getOriginReplaceMainHost = function (host, mainHost, primaryDomains) {
-    const protocol = window.location.protocol;
-    const secondaryDomain = this.getSecondaryDomain(host, primaryDomains);
+    var protocol = window.location.protocol;
+    var secondaryDomain = this.getSecondaryDomain(host, primaryDomains);
     if (secondaryDomain) {
         return protocol + '//' + secondaryDomain + '.' + mainHost;
     } else {
