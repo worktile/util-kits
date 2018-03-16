@@ -8,7 +8,7 @@ module.exports = function(env) {
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: env.min ? 'util.bundle.min.js' : 'util.bundle.js',
-            library: "utilMisc",
+            library: "utilKits",
             libraryTarget: "umd"
         },
         plugins: []

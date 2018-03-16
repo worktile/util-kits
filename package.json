@@ -1,5 +1,5 @@
 {
-    "name": "@worktile/util-misc",
+    "name": "@worktile/util-kits",
     "version": "0.0.6",
     "description": "util for browser.",
     "main": "./src/index.js",

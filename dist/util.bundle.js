@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["utilMisc"] = factory();
+		exports["utilKits"] = factory();
 	else
-		root["utilMisc"] = factory();
+		root["utilKits"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -268,11 +268,12 @@ URI.getSecondaryDomain = function (host, primaryDomains) {
 };
 
 URI.getOriginReplaceMainHost = function (host, mainHost, primaryDomains) {
-    const secondaryDomain = URI.getSecondaryDomain(host, primaryDomains);
+    var protocol = window.location.protocol;
+    var secondaryDomain = this.getSecondaryDomain(host, primaryDomains);
     if (secondaryDomain) {
-        return location.protocol + '//' + secondaryDomain + '.' + mainHost;
+        return protocol + '//' + secondaryDomain + '.' + mainHost;
     } else {
-        return location.protocol + '//' + mainHost;
+        return protocol + '//' + mainHost;
     }
 };
 
