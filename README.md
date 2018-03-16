@@ -1,6 +1,6 @@
-# util-misc
+# util-kits
 
-util misc for browser.js.
+util kits for browser.js.
 
 ## Installation
 
