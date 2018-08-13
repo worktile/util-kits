@@ -260,7 +260,7 @@ URI.getSecondaryDomain = function (host, primaryDomains) {
 
     if (arrs && arrs.length > 2 && arrs[2] !== "") {
         var primaryDomain = arrs[1];
-        if (primaryDomains.includes(primaryDomain) && ['www', 'api'].indexOf(arrs[0]) < 0) {
+        if (primaryDomains.indexOf(primaryDomain) >= 0 && ['www', 'api'].indexOf(arrs[0]) < 0) {
             secondaryDomain = arrs[0];
         }
     }

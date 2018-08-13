@@ -1,6 +1,6 @@
 {
     "name": "@worktile/util-kits",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "util for browser.",
     "main": "./src/index.js",
     "directories": {
